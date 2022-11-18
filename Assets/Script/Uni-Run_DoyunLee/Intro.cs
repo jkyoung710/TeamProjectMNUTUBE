@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Intro : MonoBehaviour
+namespace DoyunLee
 {
-    public float speed = 10f; // 이동 속도
-    public GameObject[] scrollingObjects;
-
-    void Awake()
+    public class Intro : MonoBehaviour
     {
-        Time.timeScale = 1;
-        Input.multiTouchEnabled = false;
-    }
+        public float speed = 10f; // 이동 속도
+        public GameObject[] scrollingObjects;
 
-    void Update()
-    {
-        if (scrollingObjects.Length > 0)
+        void Awake()
         {
-            for (int i = 0; i < scrollingObjects.Length; i++)
+            Time.timeScale = 1;
+            Input.multiTouchEnabled = false;
+        }
+
+        void Update()
+        {
+            if (scrollingObjects.Length > 0)
             {
-                scrollingObjects[i].transform.Translate(Vector3.left * speed * Time.deltaTime);
-            }            
-        }        
+                for (int i = 0; i < scrollingObjects.Length; i++)
+                {
+                    scrollingObjects[i].transform.Translate(Vector3.left * speed * Time.deltaTime);
+                }
+            }
 
-        if (Input.GetMouseButtonUp(0) == true)
-        {
-            Time.timeScale = 0;
-            SceneManager.LoadScene(1);
+            if (Input.GetMouseButtonUp(0) == true)
+            {
+                Time.timeScale = 0;
+                SceneManager.LoadScene(1);
+            }
         }
     }
 }

@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GainableItem : MonoBehaviour
+namespace DoyunLee
 {
-    void OnTriggerEnter2D(Collider2D collision)
+    public class GainableItem : MonoBehaviour
     {
-        if (collision.CompareTag("Player") == true)
+        void OnTriggerEnter2D(Collider2D collision)
         {
-            collision.gameObject.GetComponent<PlayerController>().AddItem(this.tag);
-            GameManager.instance.AddScore(1);
-            gameObject.SetActive(false);
+            if (collision.CompareTag("Player") == true)
+            {
+                collision.gameObject.GetComponent<PlayerController>().AddItem(this.tag);
+                GameManager.instance.AddScore(1);
+                gameObject.SetActive(false);
+            }
         }
     }
 }

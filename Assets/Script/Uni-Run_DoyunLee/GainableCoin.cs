@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GainableCoin : MonoBehaviour
+namespace DoyunLee
 {
-    void OnTriggerEnter2D(Collider2D collision)
+    public class GainableCoin : MonoBehaviour
     {
-        if (collision.CompareTag("Player") == true)
+        void OnTriggerEnter2D(Collider2D collision)
         {
-            GameManager.instance.AddScore(3);
-            gameObject.SetActive(false);
+            if (collision.CompareTag("Player") == true)
+            {
+                GameManager.instance.AddScore(3);
+                gameObject.SetActive(false);
+            }
         }
     }
 }
