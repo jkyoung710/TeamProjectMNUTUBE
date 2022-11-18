@@ -3,38 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIController : MonoBehaviour
+namespace HanSeo
 {
-
-    public GameObject menuPanel;
-
-   public void ButtonEvent(string value)
+    public class UIController : MonoBehaviour
     {
-        switch (value)
+
+        public GameObject menuPanel;
+
+        public void ButtonEvent(string value)
         {
-            case "Restart":
-                SceneManager.LoadScene("Sub");
-                Time.timeScale = 1f;
-                break;
-            case "Exit":
-                Application.Quit();
-                break;
-            case "On":
-                menuPanel.SetActive(true);
-                Time.timeScale = 0f;
-                break;
-            case "Off":
-                menuPanel.SetActive(false);
-                Time.timeScale = 1f;
-                break;
-            case "Back":
-                menuPanel.SetActive(false);
-                Time.timeScale = 1f;
-                SceneManager.LoadScene("Main");
-                break;
+            switch (value)
+            {
+                case "Restart":
+                    SceneManager.LoadScene("Sub");
+                    Time.timeScale = 1f;
+                    break;
+                case "Exit":
+                    Application.Quit();
+                    break;
+                case "On":
+                    menuPanel.SetActive(true);
+                    Time.timeScale = 0f;
+                    break;
+                case "Off":
+                    menuPanel.SetActive(false);
+                    Time.timeScale = 1f;
+                    break;
+                case "Back":
+                    menuPanel.SetActive(false);
+                    Time.timeScale = 1f;
+                    SceneManager.LoadScene("Main");
+                    break;
 
+            }
         }
+
+
     }
-
-
 }
