@@ -33,7 +33,7 @@ public class MainGameManager : MonoBehaviour
     void SetVariables()
     {
         stamina = 100;
-        gauge = 100;
+        gauge = 0;
         maxStamina = stamina;
         maxGauge = gauge;
 
