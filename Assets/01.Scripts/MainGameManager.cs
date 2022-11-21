@@ -1,8 +1,8 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Main Unity scene fileÀ» ´ã´çÇÏ´Â °ÔÀÓ¸Å´ÏÀú
+// Main Unity scene fileì„ ë‹´ë‹¹í•˜ëŠ” ê²Œì„ë§¤ë‹ˆì €
 public class MainGameManager : MonoBehaviour
 {
     public static MainGameManager instance
@@ -17,7 +17,7 @@ public class MainGameManager : MonoBehaviour
             return m_instance;
         }
     }
-    private static MainGameManager m_instance; //½Ì±ÛÅÏÀÌ ÇÒ´çµÉ º¯¼ö
+    private static MainGameManager m_instance; //ì‹±ê¸€í„´ì´ í• ë‹¹ë  ë³€ìˆ˜
 
     public int stamina, gauge;
     public int maxStamina, maxGauge;
@@ -26,7 +26,7 @@ public class MainGameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        // º¯¼ö ÃÊ±âÈ­
+        // ë³€ìˆ˜ ì´ˆê¸°í™”
         SetVariables();
     }
 

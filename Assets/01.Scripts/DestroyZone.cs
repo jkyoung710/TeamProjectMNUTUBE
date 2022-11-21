@@ -1,14 +1,16 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// DestroyZoneÀ» ºüÁ®³ª°¡¸é °ÔÀÓ¿ÀºêÁ§Æ®°¡ ÆÄ±«µÇ´Â ½ºÅ©¸³Æ®
+// DestroyZoneì„ ë¹ ì ¸ë‚˜ê°€ë©´ ê²Œì„ì˜¤ë¸Œì íŠ¸ê°€ íŒŒê´´ë˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
 public class DestroyZone : MonoBehaviour
 {
     private void OnTriggerExit2D(Collider2D collision)
     {
+        // ë‚˜ê°€ëŠ” ê²Œì„ì˜¤ë¸Œì íŠ¸ê°€ í”Œë ˆì´ì–´ê°€ ì•„ë‹ˆë©´
         if (collision.CompareTag("Player") == false)
         {
+            // íŒŒê´´í•œë‹¤
             Destroy(collision.gameObject);
         }
     }

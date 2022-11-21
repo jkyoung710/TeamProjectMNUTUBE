@@ -1,20 +1,20 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// °ÔÀÓ ¿ÀºêÁ§Æ®¸¦ °è¼Ó ¿ŞÂÊÀ¸·Î ¿òÁ÷ÀÌ´Â ½ºÅ©¸³Æ®
+// ê²Œì„ ì˜¤ë¸Œì íŠ¸ë¥¼ ê³„ì† ì™¼ìª½ìœ¼ë¡œ ì›€ì§ì´ëŠ” ìŠ¤í¬ë¦½íŠ¸
 public class ScrollingObject : MonoBehaviour
 {
-    public float speed = 10f; // ÀÌµ¿ ¼Óµµ
+    public float speed = 10f; // ì´ë™ ì†ë„
 
     void Update()
     {
-        // °ÔÀÓ ¿ÀºêÁ§Æ®¸¦ ÀÏÁ¤ ¼Óµµ·Î ¿ŞÂÊÀ¸·Î ÆòÇàÀÌµ¿ÇÏ´Â Ã³¸®
+        // ê²Œì„ ì˜¤ë¸Œì íŠ¸ë¥¼ ì¼ì • ì†ë„ë¡œ ì™¼ìª½ìœ¼ë¡œ í‰í–‰ì´ë™í•˜ëŠ” ì²˜ë¦¬
 
-        // °ÔÀÓ¿À¹ö°¡ ¾Æ´Ï¶ó¸é
+        // ê²Œì„ì˜¤ë²„ê°€ ì•„ë‹ˆë¼ë©´
         if (!MainGameManager.instance.isGameover)
         {
-            // ÃÊ´ç speedÀÇ ¼Óµµ·Î ¿ŞÂÊÀ¸·Î ÆòÇàÀÌµ¿
+            // ì´ˆë‹¹ speedì˜ ì†ë„ë¡œ ì™¼ìª½ìœ¼ë¡œ í‰í–‰ì´ë™
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
     }
