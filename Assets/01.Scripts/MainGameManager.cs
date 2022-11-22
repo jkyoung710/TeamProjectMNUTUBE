@@ -9,7 +9,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Main Unity scene fileì„ ë‹´ë‹¹í•˜ëŠ” ê²Œìž„ë§¤ë‹ˆì €
+// Main Unity scene file???´ë‹¹?˜ëŠ” ê²Œìž„ë§¤ë‹ˆ?€
 >>>>>>> parent of 31943a4 (Merge branch 'main' of https://github.com/jkyoung710/TeamProjectMNUTUBE)
 public class MainGameManager : MonoBehaviour
 {
@@ -28,7 +28,7 @@ public class MainGameManager : MonoBehaviour
 <<<<<<< HEAD
     private static MainGameManager m_instance; //½Ì±ÛÅÏÀÌ ÇÒ´çµÉ º¯¼ö
 =======
-    private static MainGameManager m_instance; //ì‹±ê¸€í„´ì´ í• ë‹¹ë  ë³€ìˆ˜
+    private static MainGameManager m_instance; //?±ê??´ì´ ? ë‹¹??ë³€??
 >>>>>>> parent of 31943a4 (Merge branch 'main' of https://github.com/jkyoung710/TeamProjectMNUTUBE)
 
     public int stamina, gauge;
@@ -41,7 +41,7 @@ public class MainGameManager : MonoBehaviour
 <<<<<<< HEAD
         // º¯¼ö ÃÊ±âÈ­
 =======
-        // ë³€ìˆ˜ ì´ˆê¸°í™”
+        // ë³€??ì´ˆê¸°??
 >>>>>>> parent of 31943a4 (Merge branch 'main' of https://github.com/jkyoung710/TeamProjectMNUTUBE)
         SetVariables();
     }
