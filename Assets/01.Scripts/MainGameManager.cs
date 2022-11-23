@@ -20,8 +20,6 @@ public class MainGameManager : MonoBehaviour
 
     private static MainGameManager m_instance; //½Ì±ÛÅÏÀÌ ÇÒ´çµÉ º¯¼ö
 
-    private static MainGameManager m_instance; //?±ê??´ì´ ? ë‹¹??ë³€??
-
 
     public int stamina, gauge;
     public int maxStamina, maxGauge;
