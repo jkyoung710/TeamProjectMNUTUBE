@@ -12,6 +12,8 @@ public class UIController : MonoBehaviour
     public GameObject char_Spin;
     public GameObject char_Refrigerator;
     public GameObject closeUI;
+    public GameObject option;
+    public GameObject exit;
 
     public void ButtonEvent(string value)
     {
@@ -22,6 +24,7 @@ public class UIController : MonoBehaviour
                 NormalUI();
                 HardUI();
                 closeUI.SetActive(true);
+                option.SetActive(false);
                 break;
             case "Easy":
                 char_Spin.SetActive(true);
@@ -40,6 +43,14 @@ public class UIController : MonoBehaviour
                 break;
             case "Close":
                 CloseUI();
+                break;
+            case "Option":
+                exit.SetActive(true);
+                gameStartUI.SetActive(false);
+                closeUI.SetActive(true);
+                break;
+            case "Exit":
+                Application.Quit();
                 break;
         }
     }
@@ -66,6 +77,9 @@ public class UIController : MonoBehaviour
         easyUI.SetActive(false);
         normalUI.SetActive(false);
         hardUI.SetActive(false);
+        exit.SetActive(false);
+        gameStartUI.SetActive(true);
+        option.SetActive(true);
     }
 
 }
