@@ -9,7 +9,8 @@ public class UIController : MonoBehaviour
     public GameObject easyUI;
     public GameObject normalUI;
     public GameObject hardUI;
-    public GameObject selectUI;
+    public GameObject char_Spin;
+    public GameObject char_Refrigerator;
     public GameObject closeUI;
 
     public void ButtonEvent(string value)
@@ -23,16 +24,22 @@ public class UIController : MonoBehaviour
                 closeUI.SetActive(true);
                 break;
             case "Easy":
-                selectUI.SetActive(true);
+                char_Spin.SetActive(true);
+                char_Refrigerator.SetActive(true);
                 break;
             case "Normal":
-                selectUI.SetActive(true);
+                char_Spin.SetActive(true);
+                char_Refrigerator.SetActive(true);
                 break;
             case "Hard":
-                selectUI.SetActive(true);
+                char_Spin.SetActive(true);
+                char_Refrigerator.SetActive(true);
                 break;
             case "Select":
                 SceneManager.LoadScene("Main");
+                break;
+            case "Close":
+                CloseUI();
                 break;
         }
     }
@@ -52,6 +59,13 @@ public class UIController : MonoBehaviour
         hardUI.SetActive(true);
     }
 
-}
+    private void CloseUI()
+    {
+        char_Spin.SetActive(false);
+        char_Refrigerator.SetActive(false);
+        easyUI.SetActive(false);
+        normalUI.SetActive(false);
+        hardUI.SetActive(false);
+    }
 
-//수정완료
+}
