@@ -2,33 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+namespace HanSeoDotge
 {
-    public float speed = 8f;
-    private Rigidbody bulletrigedbody;
-
-    void Start()
+    public class PlayerBullet : MonoBehaviour
     {
+        public float speed = 8f;
+        private Rigidbody bulletrigedbody;
 
-        bulletrigedbody = GetComponent<Rigidbody>();
-        bulletrigedbody.velocity = transform.forward * speed;
-
-        Destroy(gameObject, 3f);
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-     
-        if (other.tag == "Enemy")
+        void Start()
         {
-            BulletSpawner bulletspawner = other.GetComponent<BulletSpawner>();
 
-            if (bulletspawner != null)
+            bulletrigedbody = GetComponent<Rigidbody>();
+            bulletrigedbody.velocity = transform.forward * speed;
+
+            Destroy(gameObject, 3f);
+
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+
+            if (other.tag == "Enemy")
             {
-                bulletspawner.Die();
+                BulletSpawner bulletspawner = other.GetComponent<BulletSpawner>();
+
+                if (bulletspawner != null)
+                {
+                    bulletspawner.Die();
+                }
             }
         }
-    }
 
+    }
 }

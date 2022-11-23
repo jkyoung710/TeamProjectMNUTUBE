@@ -4,83 +4,87 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+namespace HanSeoDotge
 {
-    public GameObject gameoverText;
-    public GameObject gameclearText;
-    public Text timeText;
-    public Text recordText;
-
-    private float surviveTime;
-    private bool isGameover;
-    private bool isGameClear;
-    
-    void Start()
+    public class GameManager : MonoBehaviour
     {
+        public GameObject gameoverText;
+        public GameObject gameclearText;
+        public Text timeText;
+        public Text recordText;
 
-        surviveTime = 0;
-        isGameover = false;
+        private float surviveTime;
+        private bool isGameover;
+        private bool isGameClear;
 
-    }
-
-    
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-            {
-                SceneManager.LoadScene("Sub");
-            }
-
-        if (!isGameover)
+        void Start()
         {
-            surviveTime += Time.deltaTime;
-            timeText.text = "Time: " + (int)surviveTime;
+
+            surviveTime = 0;
+            isGameover = false;
+
         }
-        else
+
+
+        void Update()
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene("Sub");
             }
-        }
 
-        if (!isGameClear)
-        {
-            surviveTime += Time.deltaTime;
-            timeText.text = "Time: " + (int)surviveTime;
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (!isGameover)
             {
-                SceneManager.LoadScene("Sub");
+                surviveTime += Time.deltaTime;
+                timeText.text = "Time: " + (int)surviveTime;
             }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    SceneManager.LoadScene("Sub");
+                }
+            }
+
+            if (!isGameClear)
+            {
+                surviveTime += Time.deltaTime;
+                timeText.text = "Time: " + (int)surviveTime;
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    SceneManager.LoadScene("Sub");
+                }
+            }
+
         }
 
-    }
-
-    public void EndGame()
-    {
-        isGameover = true;
-        gameoverText.SetActive(true);
-
-        float bestTime = PlayerPrefs.GetFloat("BestTime");
-
-        if (surviveTime > bestTime)
+        public void EndGame()
         {
-            bestTime = surviveTime;
+            isGameover = true;
+            gameoverText.SetActive(true);
 
-            PlayerPrefs.SetFloat("BestTime", bestTime);
+            float bestTime = PlayerPrefs.GetFloat("BestTime");
+
+            if (surviveTime > bestTime)
+            {
+                bestTime = surviveTime;
+
+                PlayerPrefs.SetFloat("BestTime", bestTime);
+            }
+
+            recordText.text = "Best Time: " + (int)bestTime;
+
         }
 
-        recordText.text = "Best Time: " + (int)bestTime;
+        public void ClearGame()
+        {
+            isGameClear = true;
+            gameclearText.SetActive(true);
 
+        }
     }
 
-    public void ClearGame()
-    {
-        isGameClear = true;
-        gameclearText.SetActive(true);
-
-    }
 }

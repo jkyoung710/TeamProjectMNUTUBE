@@ -2,63 +2,66 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletSpawner : MonoBehaviour
+namespace HanSeoDotge
 {
-
-    public GameObject bulletPrefab;
-    public float spawnRateMin = 0.5f;
-    public float spawnRateMax = 1f;
-
-    private Transform target;
-    private float spawnRate;
-    private float timeAfterSpawn;
-    public int dieCount;
-
-
-   
-    void Start()
+    public class BulletSpawner : MonoBehaviour
     {
 
-        timeAfterSpawn = 0f;
+        public GameObject bulletPrefab;
+        public float spawnRateMin = 0.5f;
+        public float spawnRateMax = 1f;
 
-        spawnRate = Random.Range(spawnRateMin, spawnRateMax);
+        private Transform target;
+        private float spawnRate;
+        private float timeAfterSpawn;
+        public int dieCount;
 
-        target = FindObjectOfType<PlayerController>().transform;
 
-    }
 
-    
-    void Update()
-    {
-
-        timeAfterSpawn += Time.deltaTime;
-
-        if (timeAfterSpawn >= spawnRate)
+        void Start()
         {
+
             timeAfterSpawn = 0f;
 
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-
-            bullet.transform.LookAt(target);
-
             spawnRate = Random.Range(spawnRateMin, spawnRateMax);
+
+            target = FindObjectOfType<PlayerController>().transform;
+
         }
 
-    }
 
-    public void Die()
-    {
-        gameObject.SetActive(false);
-
-        dieCount++;
-
-        if (dieCount <= 1)
+        void Update()
         {
-            GameManager gameManager = FindObjectOfType<GameManager>();
-            gameManager.ClearGame();
+
+            timeAfterSpawn += Time.deltaTime;
+
+            if (timeAfterSpawn >= spawnRate)
+            {
+                timeAfterSpawn = 0f;
+
+                GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+
+                bullet.transform.LookAt(target);
+
+                spawnRate = Random.Range(spawnRateMin, spawnRateMax);
+            }
+
         }
 
-    }
+        public void Die()
+        {
+            gameObject.SetActive(false);
 
-   
+            dieCount++;
+
+            if (dieCount <= 1)
+            {
+                GameManager gameManager = FindObjectOfType<GameManager>();
+                gameManager.ClearGame();
+            }
+
+        }
+
+
+    }
 }
