@@ -10,6 +10,9 @@ public class PlatformSpawner : MonoBehaviour
 
     float width; // 플랫폼의 가로 길이
 
+    // 초반에 생성한 발판을 화면 밖에 숨겨둘 위치
+    Vector2 poolPosition = new Vector2(0, -25);
+
     void Awake()
     {
         //width = ;
@@ -42,7 +45,7 @@ public class PlatformSpawner : MonoBehaviour
         for(int i = 0; i < stagePlatformsUnitCount*4; i++)
         {
             int randNumber = Random.Range(0, totalPlatformCount);
-            //Instantiate<>
+            Instantiate(platforms[randNumber], poolPosition, this.transform.rotation, this.transform);
         }
         
     }
