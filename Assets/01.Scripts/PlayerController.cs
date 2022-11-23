@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float jumpForce = 700f; // 점프 힘
+    public float jumpForce; // 점프 힘
+    public float fallingForce; // 낙하 힘
 
     int jumpCount = 0; // 누적 점프 횟수
     bool isGrounded = false; // 바닥에 닿았는지 나타냄
@@ -12,9 +13,23 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D playerRigidbody; // 사용할 리지드바디 컴포넌트
 
-    void Start()
+    void OnEnable()
     {
         // 초기화
+        isDead = false;
+        jumpForce = 700f;
+        fallingForce = -1f;
+
+        MainEventBus.Subscribe(MainEventType.PlayerDead, ChangeIsDead);    
+    }
+
+    void OnDisable()
+    {
+        MainEventBus.Unsubscribe(MainEventType.PlayerDead, ChangeIsDead);
+    }
+
+    void Start()
+    {               
         // 게임 오브젝트로부터 사용할 컴포넌트들을 가져와 변수에 할당
         playerRigidbody = this.GetComponent<Rigidbody2D>();
     }
@@ -44,6 +59,11 @@ public class PlayerController : MonoBehaviour
             // 현재 속도를 절반으로 변경
             playerRigidbody.velocity = playerRigidbody.velocity * 0.5f;
         }
+
+        if (isGrounded == false && jumpCount > 0)
+        {
+            playerRigidbody.AddForce(new Vector2(0, fallingForce));
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -65,5 +85,10 @@ public class PlayerController : MonoBehaviour
 
         // 어떤 콜라이더에서 떼어진 경우 isGrounded를 false로 변경
         isGrounded = false;
+    }
+
+    void ChangeIsDead()
+    {
+        isDead = true;
     }
 }
