@@ -41,4 +41,10 @@ public class MainGameManager : MonoBehaviour
 
         isGameover = false;
     }
+
+    public void BeGameOver()
+    {
+        isGameover = true;
+        MainEventBus.Publish(MainEventType.PlayerDead);
+    }
 }
