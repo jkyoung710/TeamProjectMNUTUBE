@@ -43,6 +43,7 @@ public class UIController : MonoBehaviour
                 break;
             case "Close":
                 CloseUI();
+                closeUI.SetActive(false);
                 break;
             case "Option":
                 exit.SetActive(true);
