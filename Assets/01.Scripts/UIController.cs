@@ -29,14 +29,20 @@ public class UIController : MonoBehaviour
             case "Easy":
                 char_Spin.SetActive(true);
                 char_Refrigerator.SetActive(true);
+                normalUI.SetActive(false);
+                hardUI.SetActive(false);
                 break;
             case "Normal":
                 char_Spin.SetActive(true);
                 char_Refrigerator.SetActive(true);
+                easyUI.SetActive(false);
+                hardUI.SetActive(false);
                 break;
             case "Hard":
                 char_Spin.SetActive(true);
                 char_Refrigerator.SetActive(true);
+                easyUI.SetActive(false);
+                normalUI.SetActive(false);
                 break;
             case "Select":
                 SceneManager.LoadScene("Main");
