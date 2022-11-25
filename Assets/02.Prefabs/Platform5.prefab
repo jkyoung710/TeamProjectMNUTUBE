@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8024771383632787749}
   - component: {fileID: 8024771383632787744}
-  - component: {fileID: 8024771383632787751}
   - component: {fileID: 8024771383632787750}
   m_Layer: 0
   m_Name: Platform5R
@@ -86,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8024771383632787751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8024771383632787748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74b07402cb59324b921f8e3c5841bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!61 &8024771383632787750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -134,6 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8024771383692194301}
+  - component: {fileID: 2564859148232873108}
   m_Layer: 0
   m_Name: Platform5
   m_TagString: Untagged
@@ -158,6 +145,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2564859148232873108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024771383692194300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74b07402cb59324b921f8e3c5841bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!1 &8024771383758428478
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +168,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8024771383758428474}
   - component: {fileID: 8024771383758428473}
-  - component: {fileID: 8024771383758428472}
   - component: {fileID: 8024771383758428479}
   m_Layer: 0
   m_Name: Platform5L
@@ -244,19 +243,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8024771383758428472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8024771383758428478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74b07402cb59324b921f8e3c5841bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!61 &8024771383758428479
 BoxCollider2D:
   m_ObjectHideFlags: 0

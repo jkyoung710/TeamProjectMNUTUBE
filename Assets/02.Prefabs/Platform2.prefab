@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4277509949021078285}
   - component: {fileID: 4277509949021078280}
-  - component: {fileID: 4277509949021078287}
   - component: {fileID: 4277509949021078286}
   m_Layer: 0
   m_Name: Platform2R
@@ -86,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4277509949021078287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4277509949021078284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74b07402cb59324b921f8e3c5841bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!61 &4277509949021078286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -135,7 +121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4277509949163774738}
   - component: {fileID: 4277509949163774737}
-  - component: {fileID: 4277509949163774736}
   - component: {fileID: 4277509949163774743}
   m_Layer: 0
   m_Name: Platform2L
@@ -211,19 +196,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4277509949163774736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4277509949163774742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74b07402cb59324b921f8e3c5841bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!61 &4277509949163774743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -259,6 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4277509949230042069}
+  - component: {fileID: 2551600644285658490}
   m_Layer: 0
   m_Name: Platform2
   m_TagString: Untagged
@@ -283,3 +256,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2551600644285658490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4277509949230042068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74b07402cb59324b921f8e3c5841bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10

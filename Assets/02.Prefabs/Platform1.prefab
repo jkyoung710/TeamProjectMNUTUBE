@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1723113402674560423}
+  - component: {fileID: 6427016241700162899}
   m_Layer: 0
   m_Name: Platform1
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6427016241700162899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723113402674560422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74b07402cb59324b921f8e3c5841bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!1 &1723113402742920548
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +57,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1723113402742920544}
   - component: {fileID: 1723113402742920547}
-  - component: {fileID: 1723113402742920546}
   - component: {fileID: 1723113402742920549}
   m_Layer: 0
   m_Name: Platform1L
@@ -119,19 +132,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1723113402742920546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723113402742920548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74b07402cb59324b921f8e3c5841bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!61 &1723113402742920549
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,7 +168,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1723113403170829695}
   - component: {fileID: 1723113403170829690}
-  - component: {fileID: 1723113403170829693}
   - component: {fileID: 1723113403170829692}
   m_Layer: 0
   m_Name: Platform1R
@@ -244,19 +243,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1723113403170829693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723113403170829694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74b07402cb59324b921f8e3c5841bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!61 &1723113403170829692
 BoxCollider2D:
   m_ObjectHideFlags: 0
