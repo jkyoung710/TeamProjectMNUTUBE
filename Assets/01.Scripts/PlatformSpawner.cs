@@ -1,45 +1,46 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// í”Œë«í¼ì„ ìƒì„±í•˜ê³  ë°°ì¹˜í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
 public class PlatformSpawner : MonoBehaviour
-{
-    public GameObject[] platforms;
-    int[] platformOrder;
+{    
+    public GameObject[] platforms; // í”Œë«í¼ í”„ë¦¬íŒ¹ ëª©ë¡
+    int[] platformOrder; // ëœë¤ ìƒì„±ëœ í”Œë«í¼ ìˆœì„œ
 
-    public int stagePlatformsUnitCount;
-    int stageLength;
+    public int stagePlatformsUnitCount; // í•µì‹¬ ë¶€í’ˆ ì‚¬ì´ì— ë°°ì¹˜ë  í”Œë«í¼ ìˆ˜
+    int stageLength; // ì´ í”Œë«í¼ ìˆ˜    
 
-    public float width; // ÇÃ·§ÆûÀÇ °¡·Î ±æÀÌ
-
-    // ÃÊ¹İ¿¡ »ı¼ºÇÑ ¹ßÆÇÀ» È­¸é ¹Û¿¡ ¼û°ÜµÑ À§Ä¡
+    // ì´ˆë°˜ì— ìƒì„±í•œ ë°œíŒì„ í™”ë©´ ë°–ì— ìˆ¨ê²¨ë‘˜ ìœ„ì¹˜
     Vector2 poolPosition = new Vector2(0, -25);
-
+    // í˜„ì¬ ìƒì„±ëœ í”Œë«í¼ ëª©ë¡
     public GameObject[] currentPlatforms;
-    public int currentIndex;
 
-    public GameObject startPlatform;
-    float platformPositionY;
+    public GameObject startPlatform; // ì‹œì‘ í”Œë«í¼
+    // ì‹œì‘ í”Œë«í¼ì˜ ê°€ë¡œ ê¸¸ì´
+    // í˜„ì¬ ëª¨ë“  í”Œë«í¼ì˜ ê¸¸ì´ê°€ ì‹œì‘ í”Œë«í¼ê³¼ ë™ì¼
+    public float width;
+    float platformPositionY; // ì‹œì‘ í”Œë«í¼ì˜ yê°’
 
     void Awake()
     {
+        // ì‹œì‘ í”Œë«í¼ ê´€ë ¨ ë³€ìˆ˜ í• ë‹¹
         width = startPlatform.transform.localScale.x;
         platformPositionY = startPlatform.transform.position.y;
     }
 
     void OnEnable()
     {
-        SetVariables();
-        SetOrder();
-        SpawnPlatforms();
-        RepositionPlatforms();
+        SetVariables(); // ìŠ¤í…Œì´ì§€ ê´€ë ¨ ë³€ìˆ˜ í• ë‹¹
+        SetOrder(); // í”Œë«í¼ ìƒì„±ë  ìˆœì„œ ì •í•¨
+        SpawnPlatforms(); // í”Œë«í¼ ìƒì„±
+        RepositionPlatforms(); // í”Œë«í¼ ì •í•´ì§„ ìˆœì„œëŒ€ë¡œ ë°°ì¹˜
     }
 
     void SetVariables()
     {
         stagePlatformsUnitCount = 2;
-        stageLength = (stagePlatformsUnitCount * 4) + 1;
-        currentIndex = 0;        
+        stageLength = (stagePlatformsUnitCount * 4) + 1;      
     }
 
     void SetOrder()
@@ -65,23 +66,6 @@ public class PlatformSpawner : MonoBehaviour
         }        
     }
 
-    // À§Ä¡¸¦ Àç¹èÄ¡ÇÏ´Â ¸Ş¼­µå
-    void Reposition()
-    {
-        // ÇöÀç À§Ä¡¿¡¼­ ¿À¸¥ÂÊÀ¸·Î °¡·Î ±æÀÌ 2¹è¸¸Å­ ÀÌµ¿
-        Vector2 offset = new Vector2(width, 0);
-        try
-        {
-            Vector2 position = new Vector2(currentPlatforms[currentIndex + 2].transform.position.x, platformPositionY);
-            currentPlatforms[currentIndex + 2].transform.position = position + offset;
-            Debug.Log("´ÙÀ½ ÇÃ·§Æû À§Ä¡ ¿Å±è");
-        }
-        catch
-        {
-            Debug.Log("´ÙÀ½ ÇÃ·§Æû ¾øÀ½");
-        }        
-    }
-
     void RepositionPlatforms()
     {
         Vector2 offset = new Vector2(width, 0);
@@ -90,7 +74,7 @@ public class PlatformSpawner : MonoBehaviour
         {
             Vector2 position = new Vector2(currentPlatforms[i].transform.position.x, platformPositionY);
             currentPlatforms[i].transform.position = position + offset * i;
-            Debug.Log("´ÙÀ½ ÇÃ·§Æû À§Ä¡ ¿Å±è");
+            Debug.Log("ë‹¤ìŒ í”Œë«í¼ ìœ„ì¹˜ ì˜®ê¹€");
         }        
     }
 }
